@@ -11,7 +11,11 @@ import os
 sys.path.append(os.getcwd())
 
 from src.core.database import Base, DATABASE_URL
-from src.models.usuario_model import UsuarioModel # Importe dos models
+from src.models.usuario_model import UsuarioModel 
+from src.models.cliente_model import ClienteModel
+from src.models.servico_model import ServicoModel
+from src.models.agendamento_model import AgendamentoModel
+
 
 
 # this is the Alembic Config object, which provides

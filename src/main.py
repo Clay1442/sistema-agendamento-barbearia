@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get('/')
 def servidor_rodando():
-    return 'Server is Running'
+    return 'Server is Running' 

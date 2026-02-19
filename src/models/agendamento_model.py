@@ -8,7 +8,7 @@ class AgendamentoModel(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     data_horario = Column(DateTime, nullable=False)
-    status = Column(String, default=StatusAgendamento.AGENDADO.value)  
+    status = Column(String, default=StatusAgendamento.StatusAgendamento.AGENDADO.value)  
 
     cliente_id = Column(Integer, ForeignKey("clientes.id"))
     servico_id = Column(Integer, ForeignKey("servicos.id"))

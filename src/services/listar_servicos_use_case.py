@@ -8,6 +8,6 @@ class ListarServicosUseCase:
 
     async def execute(self) -> List[ServicoModel]:
 
-        servicos = await self.servicoRepository.pegar_todos_servicos()
+        servicos = await self.servicoRepository.listar_servicos()
 
         return servicos

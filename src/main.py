@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-# Importa o roteador que acabamos de criar
-from src.api.v1.endpoints import servicos
+from src.routers.routers import router as routers
 
 app = FastAPI(
     title="API da Barbearia",
@@ -8,13 +7,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Conecta as rotas de serviços na aplicação principal
-app.include_router(
-    servicos.router, 
-    prefix="/api/v1/servicos", 
-    tags=["Serviços"]
-)
-
+app.include_router(routers)
 
 @app.get("/")
 def root():

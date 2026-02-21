@@ -5,7 +5,7 @@ from typing import List
 from src.core.database import get_db
 from src.schemas.servico_schema import ServicoResponse
 from src.repositories.servico_repository import ServicoRepository
-from src.services.listar_servicos_use_case import ListarServicosUseCase
+from src.use_case.servico.listar_servicos_use_case import ListarServicosUseCase
 
 router = APIRouter()
 

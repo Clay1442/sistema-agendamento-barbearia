@@ -5,7 +5,7 @@ from src.core.database import get_db
 from src.schemas.servico_schema import ServicoResponse
 from src.schemas.servico_schema import ServicoCreate
 from src.repositories.servico_repository import ServicoRepository
-from src.services.criar_servico_use_case import CriarServicoUseCase
+from src.use_case.servico.criar_servico_use_case import CriarServicoUseCase
 
 router = APIRouter()
 

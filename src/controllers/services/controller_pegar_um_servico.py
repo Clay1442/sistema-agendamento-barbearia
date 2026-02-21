@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from src.core.database import get_db
 from src.schemas.servico_schema import ServicoResponse
 from src.repositories.servico_repository import ServicoRepository
-from src.services.pegar_servico_use_case import PegarServicoUseCase
+from src.use_case.servico.pegar_servico_use_case import PegarServicoUseCase
 
 router = APIRouter()
 

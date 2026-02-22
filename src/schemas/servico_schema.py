@@ -19,3 +19,10 @@ class ServicoResponse(ServicoBase):
 
     # Essa configuração é mágica: ensina o Pydantic a ler objetos do SQLAlchemy
     model_config = {"from_attributes": True}
+
+# 4. Update: O que o usuário envia no PUT (tudo é opcional)
+class ServicoUpdate(ServicoBase):
+    nome: Optional[str] = None
+    descricao: Optional[str] = None
+    preco: Optional[float] = None
+    duracao_minutos: Optional[int] = None

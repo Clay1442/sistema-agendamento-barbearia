@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy.sql import delete
 from src.models.servico_model import ServicoModel
-from src.schemas.servico_schema import ServicoCreate
+from src.schemas.servico_schema import ServicoCreate, ServicoUpdate
 
 class ServicoRepository:
     def __init__(self, db: AsyncSession):
@@ -44,5 +44,26 @@ class ServicoRepository:
         
         await self.db.execute(query)
         await self.db.commit()
+        return
 
-        return 
+    async def atualizar_servico(self, servico_id: int, servico_data: ServicoUpdate):
+        # Primeiro, pega o serviço existente
+        # Isso é necessário para manter o ID e outros campos que não estão sendo atualizados
+        servico_existente = await self.pegar_servico(servico_id)    
+        
+        if not servico_existente:
+            return None
+        
+        update_data = servico_data.model_dump(exclude_unset=True)
+
+        # Atualiza os campos do serviço existente com os novos dados
+        for key, value in update_data.items():
+            setattr(servico_existente, key, value)
+
+        self.db.add(servico_existente)    
+        await self.db.commit()
+        await self.db.refresh(servico_existente)
+
+        return servico_existente
+    
+    

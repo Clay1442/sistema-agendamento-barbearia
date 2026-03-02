@@ -9,7 +9,7 @@ from src.use_case.service.pegar_servico_use_case import PegarServicoUseCase
 router = APIRouter()
 
 @router.get(
-    "/",
+    "/{servico_id}",
     tags=["Serviços"],
     summary="Obter serviço da babearia", 
     response_model=ServicoResponse

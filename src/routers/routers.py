@@ -8,9 +8,10 @@ from src.controllers.services.controller_atualizar_um_servico import router as a
 
 router = APIRouter()
 
-router.include_router(criar_um_servico, prefix="/controllers/services/servicos/criar")
-router.include_router(pegar_um_servico, prefix="/controllers/services/servicos/pegar/{servico_id}")
-router.include_router(deletar_um_servico, prefix="/controllers/services/servicos/deletar/{servico_id}")
-router.include_router(listar_todos_servicos, prefix="/controllers/services/servicos/listar")
-router.include_router(atualizar_um_servico, prefix="/controllers/services/servicos/atualizar/{servico_id}")
+#Routers Serviços
+router.include_router(criar_um_servico, prefix="/servicos")
+router.include_router(listar_todos_servicos, prefix="/servicos")
+router.include_router(pegar_um_servico, prefix="/servicos")
+router.include_router(deletar_um_servico, prefix="/servicos")
+router.include_router(atualizar_um_servico, prefix="/servicos")
 

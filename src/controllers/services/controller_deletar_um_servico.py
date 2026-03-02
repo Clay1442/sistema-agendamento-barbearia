@@ -9,7 +9,7 @@ from src.use_case.service.deletar_servico_use_case import DeletarServicoUseCase
 router = APIRouter()
 
 @router.delete(
-    "/",
+    "/{servico_id}",
     tags=["Serviços"],
     summary="Excluir um serviço da babearia", 
     response_model=None

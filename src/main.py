@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from src.routers.routers import router as routers
+import src.models
 
 app = FastAPI(
     title="API da Barbearia",

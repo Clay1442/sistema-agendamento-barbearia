@@ -6,6 +6,7 @@ class ServicoModel(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String, nullable=False, unique=True)
+    descricao = Column(String)
     preco = Column(Float, nullable=False)
     duracao_minutos = Column(Integer, nullable=False)
         
